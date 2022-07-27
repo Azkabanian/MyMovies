@@ -1,5 +1,6 @@
-package android.mymovies
+package android.mymovies.presentation.activity
 
+import android.mymovies.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
