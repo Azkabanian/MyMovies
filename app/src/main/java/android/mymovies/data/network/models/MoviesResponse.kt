@@ -1,6 +1,6 @@
 package android.mymovies.data.network.models
 
-data class MovieResponse(
+data class MoviesResponse(
     val copyright: String,
     val has_more: Boolean,
     val num_results: Int,
