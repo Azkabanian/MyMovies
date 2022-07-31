@@ -6,9 +6,10 @@ class MoviesUseCase @Inject constructor(
     private val repository: MoviesRepository
 ) {
 
-    suspend fun getMoviesUseCase(
-        type: String
-    ) {
+     operator fun invoke(type: String) =
         repository.getMovies(type)
-    }
+
+//    suspend fun operator fun invoke(type: String) =
+//        repository.getMovies(type)
+
 }

@@ -1,7 +1,9 @@
 package android.mymovies.di.module
 
 import android.mymovies.common.Constants.Companion.BASE_URL
+import android.mymovies.data.network.MainPagingSource
 import android.mymovies.data.network.MoviesApiService
+import androidx.paging.PagingSource
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

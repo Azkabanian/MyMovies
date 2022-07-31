@@ -1,4 +1,4 @@
-package android.mymovies.data.network.models
+package android.mymovies.domain.model
 
 data class Multimedia(
     val height: Int,
