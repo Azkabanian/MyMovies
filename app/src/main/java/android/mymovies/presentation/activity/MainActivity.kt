@@ -1,13 +1,12 @@
 package android.mymovies.presentation.activity
 
 import android.mymovies.MoviesApplication
-import android.mymovies.R
 import android.mymovies.databinding.ActivityMainBinding
 import android.mymovies.presentation.viewModel.MainViewModel
 import android.mymovies.presentation.viewModel.ViewModelFactory
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         component.inject(this)
+        val splashScreen = installSplashScreen()
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -41,15 +42,6 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerView()
 
         fetchPosts()
-
-//        viewModel.movies.observe(this) {
-//            mainAdapter.submitData(this.lifecycle, it)
-//        }
-
-//        viewModel.movies.observe(this){
-//            mainAdapter.differ.submitList(it.results.toList())
-//        }
-//        viewModel.getMovies("all")
     }
 
     private fun fetchPosts() {
